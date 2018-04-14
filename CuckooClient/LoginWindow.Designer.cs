@@ -47,17 +47,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(57, 52);
+            this.label1.Location = new System.Drawing.Point(57, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 20);
+            this.label1.Size = new System.Drawing.Size(98, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cuckoo ID";
+            this.label1.Text = "Cuckoo 呼号";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(106, 108);
+            this.label2.Location = new System.Drawing.Point(116, 111);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 20);
             this.label2.TabIndex = 1;
@@ -144,7 +144,7 @@
             this.groupBox1.Size = new System.Drawing.Size(477, 187);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Cuckoo ID 登录";
+            this.groupBox1.Text = "Cuckoo 呼号登录";
             // 
             // button3
             // 
