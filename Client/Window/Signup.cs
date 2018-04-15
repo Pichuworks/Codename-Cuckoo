@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CuckooClient
+namespace Client.Window
 {
-    public partial class LoginWindow : Form
+    public partial class Signup : Form
     {
-        public LoginWindow()
+        public Signup()
         {
             InitializeComponent();
         }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CuckooClient.Properties
+namespace Client.Properties
 {
 
 

@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Client.Window;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CuckooClient
+namespace Client
 {
     static class Program
     {
@@ -16,7 +17,7 @@ namespace CuckooClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginWindow());
+            Application.Run(new Login());
         }
     }
 }
