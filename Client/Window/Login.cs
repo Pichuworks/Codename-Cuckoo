@@ -16,14 +16,15 @@ namespace Client.Window
         public Login()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             // 登录按钮
-            string username = textBox1.Text;
+            string id = textBox1.Text;
             string password = textBox2.Text;
-            if(username.Equals("") || password.Equals(""))
+            if(id.Equals("") || password.Equals(""))
             {
                 MessageBox.Show("用户名、密码不能为空！");
             }
@@ -31,7 +32,7 @@ namespace Client.Window
             { 
                 string strcon = "Data Source=.;Initial Catalog=IMCuckoo;User ID=neko;Password=*";
                 SqlConnection sqlcon = new SqlConnection(strcon);
-                string sqlstr = "select * from UserData where id = '" + username + "' and password = '" + password + "'";
+                string sqlstr = "select nickname from UserData where id = '" + id + "' and password = '" + password + "';";
                 SqlDataAdapter myda = new SqlDataAdapter(sqlstr, sqlcon);
                 DataSet myds = new DataSet();
                 sqlcon.Open();

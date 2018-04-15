@@ -44,7 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(65, 38);
+            this.label1.Location = new System.Drawing.Point(61, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 19);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(116, 76);
+            this.label2.Location = new System.Drawing.Point(112, 76);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 19);
             this.label2.TabIndex = 1;
@@ -62,7 +62,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(160, 35);
+            this.textBox1.Location = new System.Drawing.Point(156, 35);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(260, 23);
@@ -71,7 +71,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(160, 73);
+            this.textBox2.Location = new System.Drawing.Point(156, 73);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox2.Name = "textBox2";
             this.textBox2.PasswordChar = '*';
@@ -137,7 +137,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("微软雅黑", 9.07563F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(18, 50);
+            this.groupBox1.Location = new System.Drawing.Point(15, 50);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -160,8 +160,10 @@
             // 
             // Login
             // 
+            this.AcceptButton = this.button1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.button2;
             this.ClientSize = new System.Drawing.Size(507, 253);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);

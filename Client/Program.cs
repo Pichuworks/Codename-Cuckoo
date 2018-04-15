@@ -18,19 +18,31 @@ namespace Client
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Login lg = new Login();
-            lg.ShowDialog();
-            if(lg.DialogResult == DialogResult.OK)
+
+
+            while(true)
             {
-                Application.Run(new MainWindow());
+                lg.ShowDialog();
+                if (lg.DialogResult == DialogResult.OK)
+                {
+                    Application.Run(new MainWindow());
+                    break;
+                }
+                else if (lg.DialogResult == DialogResult.Ignore)
+                {
+                    Signup sgp = new Signup();
+                    sgp.ShowDialog();
+                    if (sgp.DialogResult == DialogResult.OK)
+                    {
+                        continue;
+                    }
+                }
+                else
+                {
+                    break;
+                }
             }
-            else if(lg.DialogResult == DialogResult.Ignore)
-            {
-                Application.Run(new Signup());
-            }
-            else
-            {
-                return;
-            }
+            return;
         }
     }
 }
