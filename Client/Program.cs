@@ -17,7 +17,20 @@ namespace Client
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Login lg = new Login();
+            lg.ShowDialog();
+            if(lg.DialogResult == DialogResult.OK)
+            {
+                Application.Run(new MainWindow());
+            }
+            else if(lg.DialogResult == DialogResult.Ignore)
+            {
+                Application.Run(new Signup());
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
