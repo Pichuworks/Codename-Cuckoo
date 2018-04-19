@@ -13,6 +13,8 @@ namespace Client.Window
 {
     public partial class Login : Form
     {
+        public string main_id;
+
         public Login()
         {
             InitializeComponent();
@@ -44,6 +46,7 @@ namespace Client.Window
                 }
                 else
                 {
+                    main_id = id;
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }
@@ -52,8 +55,8 @@ namespace Client.Window
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 0x20) e.KeyChar = (char)0;  //禁止空格键  
-            if ((e.KeyChar == 0x2D) && (((TextBox)sender).Text.Length == 0)) return;   //处理负数  
+            if (e.KeyChar == 0x20) e.KeyChar = (char)0;  // 禁止空格键  
+            if ((e.KeyChar == 0x2D) && (((TextBox)sender).Text.Length == 0)) return;   // 处理负数  
             if (e.KeyChar > 0x20)
             {
                 try
@@ -62,7 +65,7 @@ namespace Client.Window
                 }
                 catch
                 {
-                    e.KeyChar = (char)0;   //处理非法字符  
+                    e.KeyChar = (char)0;   // 处理非法字符  
                 }
             }
         }

@@ -19,13 +19,12 @@ namespace Client
             Application.SetCompatibleTextRenderingDefault(false);
             Login lg = new Login();
 
-
             while(true)
             {
                 lg.ShowDialog();
                 if (lg.DialogResult == DialogResult.OK)
                 {
-                    Application.Run(new MainWindow());
+                    Application.Run(new MainWindow(lg.main_id));
                     break;
                 }
                 else if (lg.DialogResult == DialogResult.Ignore)
