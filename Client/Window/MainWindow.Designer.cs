@@ -45,23 +45,28 @@
             // 
             // listBox1
             // 
+            this.listBox1.Font = new System.Drawing.Font("等线", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 17;
-            this.listBox1.Location = new System.Drawing.Point(12, 117);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.listBox1.Items.AddRange(new object[] {
+            "昵称",
+            "昵称",
+            "昵称"});
+            this.listBox1.Location = new System.Drawing.Point(12, 111);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(310, 531);
             this.listBox1.TabIndex = 1;
             // 
             // menuStrip1
             // 
+            this.menuStrip1.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.用户UToolStripMenuItem,
             this.帮助HToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(334, 27);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(334, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,7 +124,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("方正硬笔楷书_GBK", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(6, 39);
+            this.label1.Location = new System.Drawing.Point(6, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 32);
             this.label1.TabIndex = 3;
@@ -129,7 +134,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("方正硬笔楷书_GBK", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(9, 82);
+            this.label2.Location = new System.Drawing.Point(9, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 21);
             this.label2.TabIndex = 4;
@@ -143,16 +148,15 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(334, 661);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
-            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("等线", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);

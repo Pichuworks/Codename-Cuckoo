@@ -40,7 +40,6 @@ namespace Client.Window
 
             // 好友列表加载及初始化
         }
-
         private void 关于BToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutBox1 ab1 = new AboutBox1();
