@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,6 +54,24 @@
     <Compile Include="Window\AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Window\AddFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\AddFriend.Designer.cs">
+      <DependentUpon>AddFriend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Chat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\Chat.Designer.cs">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\ChatHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\ChatHistory.Designer.cs">
+      <DependentUpon>ChatHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Window\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +83,12 @@
     </Compile>
     <Compile Include="Window\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Window\Signup.cs">
       <SubType>Form</SubType>
@@ -83,11 +108,23 @@
     <EmbeddedResource Include="Window\AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Window\AddFriend.resx">
+      <DependentUpon>AddFriend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\Chat.resx">
+      <DependentUpon>Chat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\ChatHistory.resx">
+      <DependentUpon>ChatHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Window\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
