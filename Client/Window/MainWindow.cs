@@ -182,12 +182,28 @@ namespace Client.Window
             string strcon = "Data Source=.;Initial Catalog=IMCuckoo;User ID=neko;Password=*";
             SqlConnection sqlcon = new SqlConnection(strcon);
             string sqlstr = "select FriendList.friend_id, FriendList.friend_nickname, UserData.nickname from FriendList, Userdata where FriendList.user_id = '" + main_id + "' and Userdata.id = FriendList.friend_id ;";
+            string sqlstr2 = "select nickname, signature from UserData where id = '" + main_id + "';";
             SqlDataAdapter myda = new SqlDataAdapter(sqlstr, sqlcon);
+            SqlDataAdapter myda2 = new SqlDataAdapter(sqlstr2, sqlcon);
             DataSet myds = new DataSet();
+            DataSet myds2 = new DataSet();
             sqlcon.Open();
             myda.Fill(myds, "FriendList");
+            myda2.Fill(myds2, "UserData");
             sqlcon.Close();
-            if(myds.Equals(flds))
+
+            if (myds2.Tables[0].Rows[0]["nickname"].ToString() != main_nickname)
+            {
+                main_nickname = myds2.Tables[0].Rows[0]["nickname"].ToString();
+                label1.Text = main_nickname;
+            }
+
+            if (myds2.Tables[0].Rows[0]["signature"].ToString() != label2.Text)
+            {
+                label2.Text = myds2.Tables[0].Rows[0]["signature"].ToString();
+            }
+
+            if (myds.Equals(flds))
             {
                 InitializeListBox();
                 flds = myds.Copy();
@@ -217,6 +233,17 @@ namespace Client.Window
         {
             AddFriend addFriend = new AddFriend(main_id);
             addFriend.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(main_id);
+            profile.Show();
+        }
+
+        private void 好友申请RToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

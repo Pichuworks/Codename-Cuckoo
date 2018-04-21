@@ -36,13 +36,13 @@
             this.查询用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.系统设置SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.帮助HToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于BToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.好友申请RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,7 +77,6 @@
             this.toolStripMenuItem2,
             this.toolStripSeparator1,
             this.toolStripMenuItem1,
-            this.系统设置SToolStripMenuItem,
             this.退出XToolStripMenuItem});
             this.用户UToolStripMenuItem.Name = "用户UToolStripMenuItem";
             this.用户UToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
@@ -86,7 +85,8 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.查询用户ToolStripMenuItem});
+            this.查询用户ToolStripMenuItem,
+            this.好友申请RToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "好友管理(&F)";
@@ -108,12 +108,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "个人设置(&C)";
-            // 
-            // 系统设置SToolStripMenuItem
-            // 
-            this.系统设置SToolStripMenuItem.Name = "系统设置SToolStripMenuItem";
-            this.系统设置SToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.系统设置SToolStripMenuItem.Text = "系统设置(&S)";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // 退出XToolStripMenuItem
             // 
@@ -161,6 +156,13 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // 好友申请RToolStripMenuItem
+            // 
+            this.好友申请RToolStripMenuItem.Name = "好友申请RToolStripMenuItem";
+            this.好友申请RToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.好友申请RToolStripMenuItem.Text = "好友申请(&R)";
+            this.好友申请RToolStripMenuItem.Click += new System.EventHandler(this.好友申请RToolStripMenuItem_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -189,7 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem 系统设置SToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 退出XToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 帮助HToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 关于BToolStripMenuItem;
@@ -197,5 +198,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 查询用户ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 好友申请RToolStripMenuItem;
     }
 }
