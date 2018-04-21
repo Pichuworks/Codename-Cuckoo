@@ -16,10 +16,15 @@ namespace Client.Window
     {
         public string main_id;
         public string main_nickname;
+        public DataSet flds = new DataSet();
 
         public MainWindow(string window_main_id)
         {
             InitializeComponent();
+            this.DoubleBuffered = true; //设置本窗体
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true); // 禁止擦除背景
+            SetStyle(ControlStyles.DoubleBuffer, true); // 双缓冲
             main_id = window_main_id;
         }
 
@@ -47,6 +52,11 @@ namespace Client.Window
             this.Text = "用户：" + user_nickname + " 呼号：#" + main_id;
 
             // 好友列表初始化
+            sqlstr = "select FriendList.friend_id, FriendList.friend_nickname, UserData.nickname from FriendList, Userdata where FriendList.user_id = '" + main_id + "' and Userdata.id = FriendList.friend_id ;";
+            myda = new SqlDataAdapter(sqlstr, sqlcon);
+            sqlcon.Open();
+            myda.Fill(flds, "FriendList");
+            sqlcon.Close();
             InitializeListBox();
         }
 
@@ -149,6 +159,7 @@ namespace Client.Window
             {
                 MessageBox.Show("Network ERROR!\nERROR ID = 0x000000AC");
             }
+            InitializeListBox();
         }
 
         private void 关于BToolStripMenuItem_Click(object sender, EventArgs e)
@@ -164,8 +175,39 @@ namespace Client.Window
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            int flag = 0;
             this.timer1.Enabled = false;
-            InitializeListBox();
+
+            string strcon = "Data Source=.;Initial Catalog=IMCuckoo;User ID=neko;Password=*";
+            SqlConnection sqlcon = new SqlConnection(strcon);
+            string sqlstr = "select FriendList.friend_id, FriendList.friend_nickname, UserData.nickname from FriendList, Userdata where FriendList.user_id = '" + main_id + "' and Userdata.id = FriendList.friend_id ;";
+            SqlDataAdapter myda = new SqlDataAdapter(sqlstr, sqlcon);
+            DataSet myds = new DataSet();
+            sqlcon.Open();
+            myda.Fill(myds, "FriendList");
+            sqlcon.Close();
+            if(myds.Equals(flds))
+            {
+                InitializeListBox();
+                flds = myds.Copy();
+            }
+            else
+            {
+                for (int i = 0; i < myds.Tables[0].Rows.Count; i++)
+                {
+                    string temp = myds.Tables[0].Rows[i]["friend_id"].ToString();
+                    int num = getMessageNum(temp, main_id);
+                    if (num > 0)
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if(flag == 1)
+                {
+                    InitializeListBox();
+                }
+            }
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
         }

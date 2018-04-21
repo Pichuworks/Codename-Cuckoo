@@ -16,5 +16,10 @@ namespace Client.Window
         {
             InitializeComponent();
         }
+
+        private void ChatHistory_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

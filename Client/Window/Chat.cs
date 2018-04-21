@@ -23,6 +23,7 @@ namespace Client.Window
         public string friend_birthday;
         public string friend_signature;
 
+        int ctrl_enter_pressed = 0;
 
         public Chat(string argument_main_id, string argument_main_nickname, string argument_friend_id)
         {
@@ -283,7 +284,23 @@ namespace Client.Window
             if (e.Control == true && e.KeyCode == Keys.Enter)
             {
                 this.button3.PerformClick();
+                ctrl_enter_pressed = 1;
+                e.Handled = true;
             }
+        }
+
+        private void textBox1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(ctrl_enter_pressed == 1)
+            {
+                textBox1.Text = "";
+                ctrl_enter_pressed = 0;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
