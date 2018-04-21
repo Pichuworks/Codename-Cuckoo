@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FriendRequest));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.dg_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_nickname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_signature = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +39,8 @@
             this.dg_email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dg_agree = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dg_refuse = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,20 +63,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(844, 425);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(355, 218);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 14);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "没有好友申请呢，嘤嘤嘤~";
             // 
             // dg_id
             // 
@@ -123,6 +110,20 @@
             this.dg_refuse.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dg_refuse.Text = "拒绝";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(355, 218);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(170, 14);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "没有好友申请呢，嘤嘤嘤~";
+            // 
             // FriendRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -130,6 +131,7 @@
             this.ClientSize = new System.Drawing.Size(880, 450);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FriendRequest";
             this.ShowIcon = false;

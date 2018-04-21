@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.修改备注CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除好友DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.用户UToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.查询用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.好友申请RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.退出XToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,12 +47,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.好友申请RToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.修改备注CToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.删除好友DToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // listBox1
@@ -63,6 +64,29 @@
             this.listBox1.TabIndex = 1;
             this.listBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseDoubleClick);
             this.listBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.listBox1_MouseUp);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.修改备注CToolStripMenuItem,
+            this.删除好友DToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 48);
+            // 
+            // 修改备注CToolStripMenuItem
+            // 
+            this.修改备注CToolStripMenuItem.Name = "修改备注CToolStripMenuItem";
+            this.修改备注CToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.修改备注CToolStripMenuItem.Text = "修改备注(&C)";
+            this.修改备注CToolStripMenuItem.Click += new System.EventHandler(this.修改备注CToolStripMenuItem_Click);
+            // 
+            // 删除好友DToolStripMenuItem
+            // 
+            this.删除好友DToolStripMenuItem.Name = "删除好友DToolStripMenuItem";
+            this.删除好友DToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.删除好友DToolStripMenuItem.Text = "删除好友(&D)";
+            this.删除好友DToolStripMenuItem.Click += new System.EventHandler(this.删除好友DToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -94,32 +118,39 @@
             this.查询用户ToolStripMenuItem,
             this.好友申请RToolStripMenuItem});
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(147, 22);
             this.toolStripMenuItem2.Text = "好友管理(&F)";
             // 
             // 查询用户ToolStripMenuItem
             // 
             this.查询用户ToolStripMenuItem.Name = "查询用户ToolStripMenuItem";
-            this.查询用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.查询用户ToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.查询用户ToolStripMenuItem.Text = "查询用户(&Q)";
             this.查询用户ToolStripMenuItem.Click += new System.EventHandler(this.查询用户ToolStripMenuItem_Click);
+            // 
+            // 好友申请RToolStripMenuItem
+            // 
+            this.好友申请RToolStripMenuItem.Name = "好友申请RToolStripMenuItem";
+            this.好友申请RToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.好友申请RToolStripMenuItem.Text = "好友申请(&R)";
+            this.好友申请RToolStripMenuItem.Click += new System.EventHandler(this.好友申请RToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 22);
             this.toolStripMenuItem1.Text = "个人设置(&C)";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // 退出XToolStripMenuItem
             // 
             this.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem";
-            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.退出XToolStripMenuItem.Text = "退出(&X)";
             this.退出XToolStripMenuItem.Click += new System.EventHandler(this.退出XToolStripMenuItem_Click);
             // 
@@ -162,36 +193,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // 好友申请RToolStripMenuItem
-            // 
-            this.好友申请RToolStripMenuItem.Name = "好友申请RToolStripMenuItem";
-            this.好友申请RToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.好友申请RToolStripMenuItem.Text = "好友申请(&R)";
-            this.好友申请RToolStripMenuItem.Click += new System.EventHandler(this.好友申请RToolStripMenuItem_Click);
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.修改备注CToolStripMenuItem,
-            this.删除好友DToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
-            // 
-            // 修改备注CToolStripMenuItem
-            // 
-            this.修改备注CToolStripMenuItem.Name = "修改备注CToolStripMenuItem";
-            this.修改备注CToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.修改备注CToolStripMenuItem.Text = "修改备注(&C)";
-            this.修改备注CToolStripMenuItem.Click += new System.EventHandler(this.修改备注CToolStripMenuItem_Click);
-            // 
-            // 删除好友DToolStripMenuItem
-            // 
-            this.删除好友DToolStripMenuItem.Name = "删除好友DToolStripMenuItem";
-            this.删除好友DToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.删除好友DToolStripMenuItem.Text = "删除好友(&D)";
-            this.删除好友DToolStripMenuItem.Click += new System.EventHandler(this.删除好友DToolStripMenuItem_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -202,13 +203,14 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("等线", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Load += new System.EventHandler(this.MainWindow_Load);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
