@@ -72,6 +72,12 @@
     <Compile Include="Window\ChatHistory.Designer.cs">
       <DependentUpon>ChatHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Window\FMN_update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\FMN_update.Designer.cs">
+      <DependentUpon>FMN_update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Window\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\ChatHistory.resx">
       <DependentUpon>ChatHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\FMN_update.resx">
+      <DependentUpon>FMN_update.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

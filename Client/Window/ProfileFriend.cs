@@ -48,7 +48,7 @@ namespace Client.Window
 
             label8.Text = "#" + friend_id;
             label9.Text = myds.Tables[0].Rows[0]["nickname"].ToString();
-            textBox1.Text = friend_main_nickname;
+            label14.Text = friend_main_nickname;
 
             if (myds.Tables[0].Rows[0]["nickname"].ToString() == "0")
                 label10.Text = "女";
@@ -60,23 +60,6 @@ namespace Client.Window
             label11.Text = myds.Tables[0].Rows[0]["email"].ToString();
             label12.Text = myds.Tables[0].Rows[0]["birthday"].ToString();
             label13.Text = myds.Tables[0].Rows[0]["signature"].ToString();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(textBox1.Text != "")
-            {
-                string strcon = "Data Source=.;Initial Catalog=IMCuckoo;User ID=neko;Password=*";
-                SqlConnection sqlcon = new SqlConnection(strcon);
-                string sqlstr = "update FriendList set friend_nickname = '" + textBox1.Text +"' where user_id = '"+ main_id + "' and friend_id = '" + friend_id +"';";
-                SqlDataAdapter myda = new SqlDataAdapter(sqlstr, sqlcon);
-                DataSet myds = new DataSet();
-                sqlcon.Open();
-                SqlCommand sqlcom = new SqlCommand(sqlstr, sqlcon);
-                sqlcom.ExecuteNonQuery();
-                sqlcon.Close();
-                MessageBox.Show("修改成功，请稍等系统刷新！");
-            }
         }
 
         private void button2_Click(object sender, EventArgs e)

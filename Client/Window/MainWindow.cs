@@ -17,6 +17,8 @@ namespace Client.Window
         public string main_id;
         public string main_nickname;
         public DataSet flds = new DataSet();
+        public string now_selected_friend;
+        public int need_refresh = 0;
 
         public MainWindow(string window_main_id)
         {
@@ -60,7 +62,7 @@ namespace Client.Window
             InitializeListBox();
         }
 
-        private void InitializeListBox()
+        public void InitializeListBox()
         {
             // 加载好友信息
             listBox1.Items.Clear();
@@ -148,6 +150,10 @@ namespace Client.Window
 
         private void listBox1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            if (this.listBox1.SelectedItems.Count == 0)
+            {
+                return;
+            }
             ListItem item = (ListItem)listBox1.SelectedItem;
             string friend_id = item.Value.ToString();
             try
@@ -161,6 +167,7 @@ namespace Client.Window
                 MessageBox.Show("Network ERROR!\nERROR ID = 0x000000AC");
                 InitializeListBox();
             }
+            return;
         }
 
         private void 关于BToolStripMenuItem_Click(object sender, EventArgs e)
@@ -206,7 +213,7 @@ namespace Client.Window
             if (myds.Equals(flds))
             {
                 InitializeListBox();
-                flds = myds.Copy();
+                flds = myds.Clone();
             }
             else
             {
@@ -225,6 +232,13 @@ namespace Client.Window
                     InitializeListBox();
                 }
             }
+            
+            if(need_refresh == 1)
+            {
+                InitializeListBox();
+                need_refresh = 0;
+            }
+
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
         }
@@ -242,6 +256,47 @@ namespace Client.Window
         }
 
         private void 好友申请RToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                int posindex = listBox1.IndexFromPoint(new Point(e.X, e.Y));
+                listBox1.ContextMenuStrip = null;
+                if (posindex >= 0 && posindex < listBox1.Items.Count)
+                {
+                    listBox1.SelectedIndex = posindex;
+                    ListItem item = (ListItem)listBox1.SelectedItem;
+                    now_selected_friend = item.Value.ToString();
+                    try
+                    {
+                        contextMenuStrip1.Show(listBox1, new Point(e.X, e.Y));
+                    }
+                    catch
+                    {
+                        MessageBox.Show("System ERROR!\nERROR ID = 0x000000AC");
+                    }
+                    return;
+                }
+            }
+            listBox1.Refresh();
+        }
+
+        private void 修改备注CToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FMN_update fmn_Update = new FMN_update(main_id, now_selected_friend);
+            fmn_Update.ShowDialog();
+            if(fmn_Update.DialogResult == DialogResult.OK)
+            {
+                InitializeListBox();
+            }
+            return;
+        }
+
+        private void 删除好友DToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
