@@ -118,7 +118,9 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.MaximizeBox = false;
             this.Name = "ChatHistory";
+            this.ShowIcon = false;
             this.Text = "与 的历史聊天记录";
             this.Load += new System.EventHandler(this.ChatHistory_Load);
             this.groupBox1.ResumeLayout(false);

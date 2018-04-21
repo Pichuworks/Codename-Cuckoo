@@ -90,6 +90,12 @@
     <Compile Include="Window\Profile.Designer.cs">
       <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Window\ProfileFriend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\ProfileFriend.Designer.cs">
+      <DependentUpon>ProfileFriend.cs</DependentUpon>
+    </Compile>
     <Compile Include="Window\Signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Profile.resx">
       <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\ProfileFriend.resx">
+      <DependentUpon>ProfileFriend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>

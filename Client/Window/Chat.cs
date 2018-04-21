@@ -303,5 +303,11 @@ namespace Client.Window
             ChatHistory chatHistory = new ChatHistory(main_id, friend_id, main_nickname, friend_nickname, friend_main_nickname);
             chatHistory.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ProfileFriend profileFriend = new ProfileFriend(main_id, friend_id, friend_main_nickname);
+            profileFriend.Show();
+        }
     }
 }

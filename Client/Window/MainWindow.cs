@@ -154,12 +154,13 @@ namespace Client.Window
             {
                 Chat chat = new Chat(main_id, main_nickname, friend_id);
                 chat.Show();
+                InitializeListBox();
             }
             catch
             {
                 MessageBox.Show("Network ERROR!\nERROR ID = 0x000000AC");
+                InitializeListBox();
             }
-            InitializeListBox();
         }
 
         private void 关于BToolStripMenuItem_Click(object sender, EventArgs e)
