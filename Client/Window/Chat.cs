@@ -285,7 +285,7 @@ namespace Client.Window
             {
                 this.button3.PerformClick();
                 ctrl_enter_pressed = 1;
-                e.Handled = true;
+                
             }
         }
 

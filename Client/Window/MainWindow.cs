@@ -212,5 +212,11 @@ namespace Client.Window
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
         }
+
+        private void 查询用户ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddFriend addFriend = new AddFriend(main_id);
+            addFriend.Show();
+        }
     }
 }

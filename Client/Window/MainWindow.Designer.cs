@@ -32,6 +32,8 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.用户UToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.查询用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.系统设置SToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.查询用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,27 +83,42 @@
             this.用户UToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.用户UToolStripMenuItem.Text = "用户(&U)";
             // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.查询用户ToolStripMenuItem});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Text = "好友管理(&F)";
+            // 
+            // 查询用户ToolStripMenuItem
+            // 
+            this.查询用户ToolStripMenuItem.Name = "查询用户ToolStripMenuItem";
+            this.查询用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.查询用户ToolStripMenuItem.Text = "查询用户(&Q)";
+            this.查询用户ToolStripMenuItem.Click += new System.EventHandler(this.查询用户ToolStripMenuItem_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(145, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "个人设置(&C)";
             // 
             // 系统设置SToolStripMenuItem
             // 
             this.系统设置SToolStripMenuItem.Name = "系统设置SToolStripMenuItem";
-            this.系统设置SToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.系统设置SToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.系统设置SToolStripMenuItem.Text = "系统设置(&S)";
             // 
             // 退出XToolStripMenuItem
             // 
             this.退出XToolStripMenuItem.Name = "退出XToolStripMenuItem";
-            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.退出XToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.退出XToolStripMenuItem.Text = "退出(&X)";
             this.退出XToolStripMenuItem.Click += new System.EventHandler(this.退出XToolStripMenuItem_Click);
             // 
@@ -145,20 +160,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.查询用户ToolStripMenuItem});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem2.Text = "好友管理(&F)";
-            // 
-            // 查询用户ToolStripMenuItem
-            // 
-            this.查询用户ToolStripMenuItem.Name = "查询用户ToolStripMenuItem";
-            this.查询用户ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.查询用户ToolStripMenuItem.Text = "查询用户(&Q)";
             // 
             // MainWindow
             // 

@@ -82,5 +82,10 @@ namespace Client.Window
             this.DialogResult = DialogResult.Ignore;
             this.Close();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
