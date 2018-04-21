@@ -309,5 +309,10 @@ namespace Client.Window
             ProfileFriend profileFriend = new ProfileFriend(main_id, friend_id, friend_main_nickname);
             profileFriend.Show();
         }
+
+        private void Chat_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

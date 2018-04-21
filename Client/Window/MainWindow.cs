@@ -176,8 +176,9 @@ namespace Client.Window
             try
             {
                 Chat chat = new Chat(main_id, main_nickname, friend_id);
-                chat.Show();
-                InitializeListBox();
+                chat.ShowDialog();
+                if(chat.DialogResult == DialogResult.OK)
+                    InitializeListBox();
             }
             catch
             {

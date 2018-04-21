@@ -174,6 +174,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "与 聊天中";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Chat_FormClosing);
             this.Load += new System.EventHandler(this.Chat_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
