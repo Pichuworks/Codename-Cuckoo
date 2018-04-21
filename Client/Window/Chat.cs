@@ -300,7 +300,8 @@ namespace Client.Window
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            ChatHistory chatHistory = new ChatHistory(main_id, friend_id, main_nickname, friend_nickname, friend_main_nickname);
+            chatHistory.Show();
         }
     }
 }
