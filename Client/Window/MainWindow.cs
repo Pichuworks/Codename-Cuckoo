@@ -19,6 +19,8 @@ namespace Client.Window
         public DataSet flds = new DataSet();
         public string now_selected_friend;
         public int need_refresh = 0;
+        public int have_n_requests = 0;
+        public int friend_num;
 
         public MainWindow(string window_main_id)
         {
@@ -59,7 +61,21 @@ namespace Client.Window
             sqlcon.Open();
             myda.Fill(flds, "FriendList");
             sqlcon.Close();
+            friend_num = flds.Tables[0].Rows.Count;
             InitializeListBox();
+
+            //读取是否有新的好友申请
+            sqlstr = "select * from FriendRequest where receiver_id = " + main_id + " and status = 0;";
+            myda = new SqlDataAdapter(sqlstr, sqlcon);
+            myds = new DataSet();
+            sqlcon.Open();
+            myda.Fill(myds, "FriendRequest");
+            sqlcon.Close();
+            have_n_requests = myds.Tables[0].Rows.Count;
+            if (have_n_requests != 0)
+            {
+                MessageBox.Show("有 " + have_n_requests + " 条新的好友申请，请在 用户 > 好友管理 > 好友申请 中查看！", main_nickname);
+            }
         }
 
         public void InitializeListBox()
@@ -152,6 +168,7 @@ namespace Client.Window
         {
             if (this.listBox1.SelectedItems.Count == 0)
             {
+                InitializeListBox();
                 return;
             }
             ListItem item = (ListItem)listBox1.SelectedItem;
@@ -183,9 +200,10 @@ namespace Client.Window
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int flag = 0;
+            int flag = 0;   // 和谜一般的刷新listBox相关
             this.timer1.Enabled = false;
 
+            // 读数据库
             string strcon = "Data Source=.;Initial Catalog=IMCuckoo;User ID=neko;Password=*";
             SqlConnection sqlcon = new SqlConnection(strcon);
             string sqlstr = "select FriendList.friend_id, FriendList.friend_nickname, UserData.nickname from FriendList, Userdata where FriendList.user_id = '" + main_id + "' and Userdata.id = FriendList.friend_id ;";
@@ -199,17 +217,21 @@ namespace Client.Window
             myda2.Fill(myds2, "UserData");
             sqlcon.Close();
 
+            // 刷新用户名
             if (myds2.Tables[0].Rows[0]["nickname"].ToString() != main_nickname)
             {
                 main_nickname = myds2.Tables[0].Rows[0]["nickname"].ToString();
                 label1.Text = main_nickname;
+                this.Text = "用户：" + main_nickname + " 呼号：#" + main_id;
             }
 
+            // 刷新签名
             if (myds2.Tables[0].Rows[0]["signature"].ToString() != label2.Text)
             {
                 label2.Text = myds2.Tables[0].Rows[0]["signature"].ToString();
             }
 
+            // 我现在都搞不懂的刷新listBox，又不是不能用
             if (myds.Equals(flds))
             {
                 InitializeListBox();
@@ -227,9 +249,14 @@ namespace Client.Window
                         break;
                     }
                 }
-                if(flag == 1)
+                if (flag == 1)
                 {
                     InitializeListBox();
+                }
+                if (friend_num != myds.Tables[0].Rows.Count)
+                {
+                    InitializeListBox();
+                    friend_num = myds.Tables[0].Rows.Count;
                 }
             }
             
@@ -237,6 +264,23 @@ namespace Client.Window
             {
                 InitializeListBox();
                 need_refresh = 0;
+            }
+
+            // 获取好友申请
+            sqlstr = "select * from FriendRequest where receiver_id = " + main_id + " and status = 0;";
+            myda = new SqlDataAdapter(sqlstr, sqlcon);
+            myds = new DataSet();
+            sqlcon.Open();
+            myda.Fill(myds, "FriendRequest");
+            sqlcon.Close();
+            if (have_n_requests != myds.Tables[0].Rows.Count && myds.Tables[0].Rows.Count != 0)
+            {
+                MessageBox.Show("有 " + myds.Tables[0].Rows.Count.ToString() + " 条新的好友申请，请在 用户 > 好友管理 > 好友申请 中查看！", main_nickname);
+                have_n_requests = myds.Tables[0].Rows.Count;
+            }
+            else if(myds.Tables[0].Rows.Count == 0)
+            {
+                have_n_requests = myds.Tables[0].Rows.Count;
             }
 
             this.timer1.Enabled = true;
@@ -257,7 +301,10 @@ namespace Client.Window
 
         private void 好友申请RToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FriendRequest friendRequest = new FriendRequest(main_id);
+            friendRequest.ShowDialog();
+            if (friendRequest.DialogResult == DialogResult.OK)
+                InitializeListBox();
         }
 
         private void listBox1_MouseUp(object sender, MouseEventArgs e)
@@ -298,7 +345,11 @@ namespace Client.Window
 
         private void 删除好友DToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FriendDelete friendDelete = new FriendDelete(main_id, now_selected_friend);
+            friendDelete.ShowDialog();
+            if (friendDelete.DialogResult == DialogResult.OK)
+                InitializeListBox();
+            return;
         }
     }
 }

@@ -47,7 +47,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox1.Location = new System.Drawing.Point(17, 325);
+            this.textBox1.Location = new System.Drawing.Point(17, 324);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(550, 200);
@@ -62,7 +62,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("等线", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(17, 219);
+            this.groupBox1.Location = new System.Drawing.Point(17, 218);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(550, 100);
             this.groupBox1.TabIndex = 3;
@@ -170,6 +170,7 @@
             this.MaximizeBox = false;
             this.Name = "Chat";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "与 聊天中";
             this.Load += new System.EventHandler(this.Chat_Load);
             this.groupBox1.ResumeLayout(false);

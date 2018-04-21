@@ -34,8 +34,6 @@ namespace Client.Window
                 string strcon = "Data Source=.;Initial Catalog=IMCuckoo;User ID=neko;Password=*";
                 SqlConnection sqlcon = new SqlConnection(strcon);
                 string sqlstr = "update FriendList set friend_nickname = '" + textBox1.Text + "' where user_id = " + main_id + "and friend_id = " + friend_id + ";";
-                SqlDataAdapter myda = new SqlDataAdapter(sqlstr, sqlcon);
-                DataSet myds = new DataSet();
                 sqlcon.Open();
                 SqlCommand sqlcom = new SqlCommand(sqlstr, sqlcon);
                 sqlcom.ExecuteNonQuery();

@@ -164,6 +164,7 @@
             // 
             // button2
             // 
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.button2.Location = new System.Drawing.Point(327, 335);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -208,6 +209,7 @@
             this.MaximizeBox = false;
             this.Name = "ProfileFriend";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " 的详细信息";
             this.Load += new System.EventHandler(this.ProfileFriend_Load);
             this.ResumeLayout(false);

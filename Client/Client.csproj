@@ -78,6 +78,18 @@
     <Compile Include="Window\FMN_update.Designer.cs">
       <DependentUpon>FMN_update.cs</DependentUpon>
     </Compile>
+    <Compile Include="Window\FriendDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\FriendDelete.Designer.cs">
+      <DependentUpon>FriendDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Window\FriendRequest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\FriendRequest.Designer.cs">
+      <DependentUpon>FriendRequest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Window\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\FMN_update.resx">
       <DependentUpon>FMN_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\FriendDelete.resx">
+      <DependentUpon>FriendDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\FriendRequest.resx">
+      <DependentUpon>FriendRequest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -133,6 +133,7 @@
             this.MaximizeBox = false;
             this.Name = "AddFriend";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "查询用户";
             this.Load += new System.EventHandler(this.AddFriend_Load);
             this.groupBox1.ResumeLayout(false);

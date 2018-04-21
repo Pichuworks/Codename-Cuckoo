@@ -121,6 +121,7 @@
             this.MaximizeBox = false;
             this.Name = "ChatHistory";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "与 的历史聊天记录";
             this.Load += new System.EventHandler(this.ChatHistory_Load);
             this.groupBox1.ResumeLayout(false);
